@@ -2,8 +2,12 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { App } from './App'
 
-test('renders learn react link', () => {
+test('App has Hello World', () => {
   render(<App />);
-  const linkElement = screen.getByText(/privet/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText(/Hello World/i)).toBeInTheDocument();
+});
+
+test('App has List', () => {
+  render(<App />);
+  expect(screen.getByRole('list')).toBeInTheDocument();
 });
