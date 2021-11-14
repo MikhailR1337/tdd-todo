@@ -1,11 +1,10 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { App } from '.';
+import { AddTodo } from '.';
 
-describe('Simple App tests', () => {
-
-    test('App rendered', () => {
-        render(<App />);
+describe('Simple AddTodo test', () => {
+    test('AddTodo has input', () => {
+        render(<AddTodo />);
         expect(screen.getByRole('textbox')).toBeInTheDocument();
-    });
+    })
 });
