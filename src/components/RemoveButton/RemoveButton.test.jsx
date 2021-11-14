@@ -1,10 +1,10 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { AddButton } from '.';
+import { RemoveButton } from '.';
 
-describe('Simple Button test', () => {
-    test('Button has add', () => {
-        render(<AddButton />);
+describe('Simple RemoveButton test', () => {
+    test('RemoveButton has remove', () => {
+        render(<RemoveButton />);
         expect(screen.queryByText('remove')).toBeInTheDocument();
     })
 });

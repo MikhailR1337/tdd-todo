@@ -1,7 +1,11 @@
 import React from 'react';
 
-export function AddButton() {
+interface Props {
+    addTodo: () => void;
+}
+
+export function AddButton({ addTodo }: Props) {
     return (
-        <a className="waves-effect waves-light btn">add</a>
+        <a className="waves-effect waves-light btn" onClick={addTodo}>add</a>
     )
 }

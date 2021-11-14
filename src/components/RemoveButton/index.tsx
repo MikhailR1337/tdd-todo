@@ -1,7 +1,11 @@
 import React from 'react';
 
-export function AddButton() {
+interface Props {
+    removeTodo: () => void;
+}
+
+export function RemoveButton({ removeTodo }: Props) {
     return (
-        <a className="waves-effect waves-light btn">remove</a>
+        <a className="waves-effect waves-light btn" onClick={removeTodo}>remove</a>
     )
 }
