@@ -3,8 +3,13 @@ import { render, screen } from '@testing-library/react';
 import { Header } from '.';
 
 describe('Simple Header test', () => {
-    test('Button has add', () => {
+    test('Header has text', () => {
         render(<Header />);
         expect(screen.getByText('I am mister Header')).toBeInTheDocument();
+    })
+
+    test('Header is nav centered', () => {
+        render(<Header />);
+        expect(screen.getByRole('navigation')).toHaveClass('center-align');
     })
 });

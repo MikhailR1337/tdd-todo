@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { TodoElement } from '.';
+import userEvent from '@testing-library/user-event';
 
 describe('Simple text test', () => {
     const text = 'Testin Text';
@@ -8,6 +9,17 @@ describe('Simple text test', () => {
 
     test('TodoElement has text', () => {
         render(<TodoElement text={text} removeTodo={fn}/>);
-        expect(screen.getByText('Testin Text')).toBeInTheDocument();
+        expect(screen.getByText(text)).toBeInTheDocument();
+    })
+
+    test('TodoElement has RemoveButton', () => {
+        render(<TodoElement text={text} removeTodo={fn}/>);
+        expect(screen.getByText('remove')).toBeInTheDocument();
+    })
+
+    test('TodoElement has RemoveButton with function', () => {
+        render(<TodoElement text={text} removeTodo={fn}/>);
+        userEvent.click(screen.getByText('remove'));
+        expect(fn).toBeCalled();
     })
 });
