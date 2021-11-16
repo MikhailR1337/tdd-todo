@@ -22,4 +22,10 @@ describe('Simple AddTodo test', () => {
         userEvent.click(screen.getByText('add'));
         expect(fn).toBeCalled();
     })
+
+    test('AddTodo snapshot', () => {
+        const addTodo = render(<AddTodo addTodo={fn} />);
+
+        expect(addTodo).toMatchSnapshot();
+    })
 });

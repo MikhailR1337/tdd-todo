@@ -17,4 +17,10 @@ describe('Simple AddButton test', () => {
         userEvent.click(screen.getByText('add'));
         expect(fn).toBeCalled();
     })
+
+    test('AddButton snapshot', () => {
+        const addButton = render(<AddButton addTodo={fn} />);
+
+        expect(addButton).toMatchSnapshot();
+    })
 });

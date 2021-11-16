@@ -22,4 +22,10 @@ describe('Simple text test', () => {
         userEvent.click(screen.getByText('remove'));
         expect(fn).toBeCalled();
     })
+
+    test('TodoElement snapshot', () => {
+        const todoElement = render(<TodoElement text={text} removeTodo={fn}/>);
+
+        expect(todoElement).toMatchSnapshot();
+    })
 });

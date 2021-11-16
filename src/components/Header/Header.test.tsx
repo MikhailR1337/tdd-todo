@@ -12,4 +12,10 @@ describe('Simple Header test', () => {
         render(<Header />);
         expect(screen.getByRole('navigation')).toHaveClass('center-align');
     })
+
+    test('Header snapshot', () => {
+        const header = render(<Header />);
+
+        expect(header).toMatchSnapshot();
+    })
 });

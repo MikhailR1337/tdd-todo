@@ -16,4 +16,10 @@ describe('Simple RemoveButton test', () => {
         userEvent.click(screen.getByText('remove'));
         expect(fn).toBeCalled();
     })
+
+    test('RemoveButton snapshot', () => {
+        const removeButton = render(<RemoveButton />);
+
+        expect(removeButton).toMatchSnapshot();
+    })
 });

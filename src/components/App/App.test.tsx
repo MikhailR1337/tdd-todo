@@ -34,4 +34,10 @@ describe('Simple App tests', () => {
         userEvent.click(screen.getAllByText('remove')[0]);
         expect(screen.getAllByRole('listitem').length).toBe(1);
     });
+
+    test('App snapshot', () => {
+        const app = render(<App />);
+
+        expect(app).toMatchSnapshot();
+    })
 });
